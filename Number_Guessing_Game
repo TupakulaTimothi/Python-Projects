@@ -1,0 +1,26 @@
+import random
+import math
+print("\n\n#\tWELCOME TO NUMBER GUESSING GAME\t\t#\n")
+lower = int(input("\tEnter Lower bound:"))
+upper = int(input("\tEnter Upper bound:"))
+
+no = random.randint(lower, upper)
+nog=int(math.log(no,2))
+print("\tYour Total Number Of Guesses is ", nog)
+test=nog
+while(nog!=0):
+    guess_number=int(input("\n\tGuess a Number:"))
+    if(no==guess_number):
+        nog=nog-1
+        flag=0
+        break
+    elif(no>guess_number):
+        print("\n\t“Try Again! You guessed too small\”")
+    else:
+        print("\n\t“Try Again! You guessed too high\”")
+    nog = nog-1
+if(flag==0):
+    print("\n\tyou Have tried of ",test-nog," times totally..")
+    print("\n\n\t\"Congrations! You Won the Game!!\"")
+else:
+    print("\n\n\tbetter luck next time")
